@@ -15,10 +15,19 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }: Movie
                     className="w-full h-52 rounded-lg"
                     resizeMode="cover"
                 />
-                <Text className="text-white text-sm font-bold mt-2">{title}</Text>
+                <Text className="text-white text-sm font-bold mt-2" numberOfLines={1}>{title}</Text>
                 <View className="flex-row items-center justify-start gap-x-1">
                     <Image source={icons.star} className="size-4" />
-                    <Text className="text-white text-xs font-bold" >{Math.round(vote_average)}</Text>
+                    <Text className="text-white text-xs font-bold uppercase" >{Math.round(vote_average)/2}</Text>
+                    <View className="flex-row items-center justify-between">
+                        <Text className="text-ligth-300 text-xs font-medium mt-1">
+                            {release_date?.split("-")[0]}
+                        </Text>
+                        <Text className="text-ligth-300 text-xs font-medium uppercase">
+                            Movie
+                         </Text>
+                    </View >
+
                 </View>
             </TouchableOpacity>
         </Link>
