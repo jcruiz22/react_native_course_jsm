@@ -3,7 +3,7 @@ import { images } from "@/constants/images";
 import { icons } from "@/constants/icons";
 import SearchBar from "@/components/SearchBar";
 import { useRouter } from "expo-router";
-import { fetchMovies } from "@/services/api";
+import { fetchMovies, fetchGenres } from "@/services/api";
 import useFetch from "@/services/useFetch";
 import MovieCard from "@/components/MovieCard";
 
@@ -13,8 +13,24 @@ export default function Index() {
 
   const { data: movies, loading: moviesLoading, error: moviesError } = useFetch(() => fetchMovies({
     query: ''
-  }
-  ));
+  }));
+
+  const { data: genreMap, loading: genresLoading, error: genresError } = useFetch(
+    fetchGenres,
+    {
+      transform: (data) => {
+        // Transform the array of genres into a lookup map
+        if (data && Array.isArray(data)) {
+          const map: Record<number, string> = {};
+          data.forEach((genre: { id: number; name: string }) => {
+            map[genre.id] = genre.name;
+          });
+          return map;
+        }
+        return {};
+      }
+    }
+  );
 
   return (
     <View className="flex-1 bg-primary">
@@ -43,11 +59,11 @@ export default function Index() {
                 data={movies}
                 renderItem={({ item }) => (
                   <MovieCard
-                    {...item}
+                    {...item} genreMap={genreMap}
                   />
                 )}
                 keyExtractor={(item) => item.id.toString()}
-                numColumns={3}
+                numColumns={2}
                 columnWrapperStyle={{
                   justifyContent: 'flex-start',
                   marginBottom: 10,
