@@ -134,7 +134,7 @@ A sleek, feature-rich movie browsing application built with React Native and Exp
 
 ## 📦 Project Structure
 
-```
+```bash
 react_native_course_jsm/
 ├── app/                # Application screens
 │   ├── (tabs)/         # Tab navigation screens
