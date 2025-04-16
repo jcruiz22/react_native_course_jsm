@@ -1,50 +1,235 @@
-# Welcome to your Expo app 👋
+# MovieBrowser - React Native Movie App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A sleek, feature-rich movie browsing application built with React Native and Expo. Browse the latest movies, search for your favorites, and discover detailed information about any film.
 
-## Get started
+## 📱 Features
 
-1. Install dependencies
+- **Latest Movies Feed:** Browse current popular movies
+- **Movie Details:** View comprehensive information about any movie
+- **Genre Filtering:** Browse movies by specific genres
+- **Search Functionality:** Quickly find movies by title or keywords
+- **Responsive UI:** Beautiful interface that works on various device sizes
+- **Dynamic Data:** Real-time movie information from TMDB API
 
-   ```bash
-   npm install
-   ```
+## 🛠️ Tech Stack
 
-2. Start the app
+- **React Native:** Core UI framework
+- **Expo:** Development platform and tools
+- **TypeScript:** Type-safe code
+- **Expo Router:** Navigation and routing
+- **NativeWind/TailwindCSS:** Styling
+- **Custom Hooks:** Reusable logic with useFetch
+- **TMDB API:** Movie data source
 
-   ```bash
-    npx expo start
-   ```
+## 📦 Project Structure
+react_native_course_jsm/
+├── app/                # Application screens
+│   ├── (tabs)/         # Tab navigation screens
+│   │   ├── index.tsx   # Home screen
+│   │   └── search.tsx  # Search screen
+│   └── movies/[id].tsx # Movie details screen
+├── components/         # Reusable UI components
+│   ├── MovieCard.tsx   # Movie card component
+│   ├── SearchBar.tsx   # Search input component
+│   └── ...
+├── services/           # API and utility services
+│   ├── api.ts          # TMDB API integration
+│   └── useFetch.ts     # Custom data fetching hook
+├── constants/          # App constants
+│   ├── icons.ts        # Icon assets
+│   └── images.ts       # Image assets
+└── interfaces/         # TypeScript interfaces
+    └── interfaces.d.ts # Type definitions
 
-In the output, you'll find options to open the app in a
+### 🚀 Key Components
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+#### MovieCard
+Displays movie information in a card format with:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Movie poster
+- Title and release year
+- Rating
+- Genre tags
+- Age rating badge for adult content
 
-## Get a fresh project
+#### useFetch Hook
+A powerful custom hook for data fetching that provides:
 
-When you're ready, run:
+- Loading states
+- Error handling
+- Data transformation
+- Auto-fetching on component mount
+- Manual refetch capability
+- State reset
 
+## 🔧 API Integration
+
+The app integrates with The Movie Database (TMDB) API to fetch:
+- Latest movies
+- Movie details
+- Genre information
+- Search results
+
+## 📝 Getting Started
+
+### Prerequisites
+- Node.js (14.0 or later)
+- Expo CLI
+- TMDB API key
+
+### Installation
+1. Clone the repository
 ```bash
-npm run reset-project
+git clone https://github.com/yourusername/react_native_course_jsm.git
+cd react_native_course_jsm
+```
+2. Install dependencies
+```bash
+npm install
+```
+3. Create a `.env` file with your TMDB API key
+```bash
+TMDB_API_KEY=your_api_key_here
+```
+4. Start the development server
+```bash
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 📱 Usage
 
-## Learn more
+- **Browse Movies:** Scroll through the home screen to see latest movies
+- **Search:** Tap the search icon to find specific movies
+- **View Details:** Tap on any movie card to see detailed information
+- **Filter by Genre:** Use the genre tags to filter movies
 
-To learn more about developing your project with Expo, look at the following resources:
+## 📄 License
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Join the community
+## 🙏 Acknowledgments
 
-Join our community of developers creating universal apps.
+- # 🎬 MovieBrowser - React Native Movie App
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+A sleek, feature-rich movie browsing application built with React Native and Expo. Browse the latest movies, search for your favorites, and discover detailed information about any film.
+
+## 📱 Features
+
+- **Latest Movies Feed**: Browse current popular movies
+- **Movie Details**: View comprehensive information about any movie
+- **Genre Filtering**: Browse movies by specific genres
+- **Search Functionality**: Quickly find movies by title or keywords
+- **Responsive UI**: Beautiful interface that works on various device sizes
+- **Dynamic Data**: Real-time movie information from TMDB API
+
+## 🛠️ Tech Stack
+
+- **React Native**: Core UI framework
+- **Expo**: Development platform and tools
+- **TypeScript**: Type-safe code
+- **Expo Router**: Navigation and routing
+- **NativeWind/TailwindCSS**: Styling
+- **Custom Hooks**: Reusable logic with `useFetch`
+- **TMDB API**: Movie data source
+
+## 📦 Project Structure
+
+```
+react_native_course_jsm/
+├── app/                # Application screens
+│   ├── (tabs)/         # Tab navigation screens
+│   │   ├── index.tsx   # Home screen
+│   │   └── search.tsx  # Search screen
+│   └── movies/[id].tsx # Movie details screen
+├── components/         # Reusable UI components
+│   ├── MovieCard.tsx   # Movie card component
+│   ├── SearchBar.tsx   # Search input component
+│   └── ...
+├── services/           # API and utility services
+│   ├── api.ts          # TMDB API integration
+│   └── useFetch.ts     # Custom data fetching hook
+├── constants/          # App constants
+│   ├── icons.ts        # Icon assets
+│   └── images.ts       # Image assets
+└── interfaces/         # TypeScript interfaces
+    └── interfaces.d.ts # Type definitions
+```
+
+## 🚀 Key Components
+
+### MovieCard
+
+Displays movie information in a card format with:
+- Movie poster
+- Title and release year
+- Rating
+- Genre tags
+- Age rating badge for adult content
+
+### useFetch Hook
+
+A powerful custom hook for data fetching that provides:
+- Loading states
+- Error handling
+- Data transformation
+- Auto-fetching on component mount
+- Manual refetch capability
+- State reset
+
+## 🔧 API Integration
+
+The app integrates with The Movie Database (TMDB) API to fetch:
+- Latest movies
+- Movie details
+- Genre information
+- Search results
+
+## 📝 Getting Started
+
+### Prerequisites
+
+- Node.js (14.0 or later)
+- Expo CLI
+- TMDB API key
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/react_native_course_jsm.git
+cd react_native_course_jsm
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Create a .env file with your TMDB API key
+```
+TMDB_API_KEY=your_api_key_here
+```
+
+4. Start the development server
+```bash
+npx expo start
+```
+
+## 📱 Usage
+
+- **Browse Movies**: Scroll through the home screen to see latest movies
+- **Search**: Tap the search icon to find specific movies
+- **View Details**: Tap on any movie card to see detailed information
+- **Filter by Genre**: Use the genre tags to filter movies
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- [The Movie Database (TMDB)](https://www.themoviedb.org/) for providing the API
+- Expo team for the excellent development tools
+- React Native community for support and packages
+
+Made with ❤️ by JC RUIZ inspired by JSMastery
