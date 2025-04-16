@@ -134,7 +134,9 @@ A sleek, feature-rich movie browsing application built with React Native and Exp
 
 ## 📦 Project Structure
 
-```bash
+The project follows a clean, organized structure for better maintainability:
+
+```
 react_native_course_jsm/
 ├── app/                # Application screens
 │   ├── (tabs)/         # Tab navigation screens
@@ -152,8 +154,10 @@ react_native_course_jsm/
 │   ├── icons.ts        # Icon assets
 │   └── images.ts       # Image assets
 └── interfaces/         # TypeScript interfaces
-    └── interfaces.d.ts # Type definitions
+   └── interfaces.d.ts # Type definitions
 ```
+
+This organization separates concerns, making the codebase easier to navigate and maintain. Expo Router powers the file-based navigation system, with screens in the `app` directory and reusable components kept separate.
 
 ## 🚀 Key Components
 
