@@ -6,6 +6,7 @@ import useFetch from '@/services/useFetch';
 import { fetchMovies } from '@/services/api';
 import { icons } from '@/constants/icons';
 import SearchBar from '@/components/SearchBar';
+import { updateSearchCount } from '@/services/appwrite';
 
 const Search = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -22,6 +23,9 @@ const Search = () => {
 
     // Debounce search to avoid too many API calls while typing
     useEffect(() => {
+        //comment out since the SDK is not working
+        // updateSearchCount( debouncedQuery, movies[0] );
+
         const timeoutId = setTimeout(() => {
             setDebouncedQuery(searchQuery);
         }, 500);
